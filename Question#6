@@ -1,1 +1,4 @@
-
+*(pulo + 2); //This line would return the 3rd element of the vector 'pulo[]'
+*(pulo + 4);
+pulo + 4;
+pulo + 2;

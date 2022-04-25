@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  char x[0]
+  //4093
+  //4094
+  //4095
+  
+  int x[0]
+  //4094
+  //4096
+  //4098
+  
+  float x[0]
+  //4096
+  //409A
+  //409E
+  
+  double x[0]
+  //409A
+  //40A2
+  //40AA
+}

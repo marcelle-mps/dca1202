@@ -1,0 +1,19 @@
+float aloha[10], coisas[10][5], *pf, value = 2.2;
+int i=3;
+
+aloha[2] = value;
+//Valid
+scanf("%f", &aloha);
+//Valid
+aloha = value";
+//Invalid, unexpected "
+printf("%f", aloha);
+//Valid
+coisas[4][4] = aloha[3];
+//Valid
+coisas[5] = aloha;
+//Invalid, wrong way to copy a vector
+pf = value;
+//Valid
+pf = aloha;
+//Valid

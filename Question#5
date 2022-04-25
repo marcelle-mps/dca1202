@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void){
+  float vet[5] = {1.1,2.2,3.3,4.4,5.5};
+  float *f;
+  int i;
+  
+  f = vet;
+  
+  printf("contador/valor/valor/endereco/endereco");
+  //contador/valor/valor/endereco/endereco
+  
+  for(i = 0 ; i <= 4 ; i++){
+      
+  printf("\ni = %d",i);
+  //i = 0 
+  //i = 1
+  //i = 2
+  //i = 3
+  //i = 4
+  //The counter i, being added in 1
+  printf("vet[%d] = %.1f",i, vet[i]);
+  //vet[0] = 1.1
+  //vet[1] = 2.2
+  //vet[2] = 3.3
+  //vet[3] = 4.4
+  //vet[4] = 5.5
+  //The vector 'vet' with the counter i, as shown in the 13th line
+  printf("*(f + %d) = %.1f",i, *(f+i));
+  //*(f + 0) = 1.1%
+  //*(f + 1) = 2.2%
+  //*(f + 2) = 3.3%
+  //*(f + 3) = 4.4%
+  //*(f + 4) = 5.5%
+  /*The same values of the vector 'vet' with the % sign,
+  but being printed with the use of a pointer*/
+  printf("&vet[%d] = %X",i, &vet[i]);
+  //vet[0] = 1486AB50
+  //vet[1] = 1486AB54
+  //vet[2] = 1486AB58
+  //vet[3] = 1486AB5C
+  //vet[4] = 1486AB60
+  //The vector's adress
+  printf("(f + %d) = %X",i, f+i);
+  //(f + 0) = 1486AB50
+  //(f + 1) = 1486AB54
+  //(f + 2) = 1486AB58
+  //(f + 3) = 1486AB5C
+  //(f + 4) = 1486AB60
+  //The vector's adress as shown by a pointer
+  }
+}

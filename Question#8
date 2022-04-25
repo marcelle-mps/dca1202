@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int vet[] = {4,9,13};
+  int i;
+  
+  for(i=0;i<3;i++){
+  printf("%d ",*(vet+i));
+  }
+  //Returns the content inside the vector 'vet'
+  
+  for(i=0;i<3;i++){
+  printf("%X ",vet+i);
+  }
+  //Returns the adresses of the vector's contents
+  
+  return 0;
+}

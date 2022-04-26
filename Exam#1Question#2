@@ -3,8 +3,8 @@
 
 int main(){
   int **x;
-  int numberOfLines, numberOfColumns, i, j,;
-  int **y
+  int numberOfLines, numberOfColumns, i, j;
+  int **y;
   int numberOfElements, k=0;
   
   //Having the matrix's size pre-defined as 8

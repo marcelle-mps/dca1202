@@ -7,11 +7,15 @@ int main(){
   int **y
   int numberOfElements, k=0;
   
+  //Having the matrix's size pre-defined as 8
+  numberOfLines = 8;
+  numberOfColumns = 8;
+  
   //Having the user define the size of the matrix
-  printf("How many lines do you want in your matrix? ");
+  /*printf("How many lines do you want in your matrix? ");
   scanf("%d", &numberOfLines);
   printf("\nHow many columns do you want in your matrix? ");
-  scanf("%d", &numberOfColumns);
+  scanf("%d", &numberOfColumns);*/
   
   //Making sure that the vector's size comports all of the matrix's elements
   numberOfElements = numberOfColumns * numberOfLines;

@@ -54,7 +54,7 @@ int main(){
   
   for(i=0; i<numberOfLines; i++){
     for(j=0; j<numberOfColumns; j++){
-      x[i][j] = y[k];
+      y[k] = x[i][j];
       k++;
     }
   }

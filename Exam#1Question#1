@@ -1,0 +1,68 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+  int **x;
+  int numberOfLines, numberOfColumns, numberOfPlanes, i, j, k;
+  int planeOfChoice;
+  
+  //Having the user define the size of the matrix
+  printf("How many lines do you want in your matrix? ");
+  scanf("%d", &numberOfLines);
+  printf("\nHow many columns do you want in your matrix? ");
+  scanf("%d", &numberOfColumns);
+  printf("\nHow many planes do you want in your matrix? ");
+  scanf("%d", &numberOfPlanes);
+ 
+  //Allocating space for the matrix
+  x = malloc(numberOfLines * sizeof(int*));
+  for(i=0; i<numberOfLines; i++){
+    x[i] = malloc(numberOfColumns * sizeof(int));
+  }
+  for(i=0; i<numberOfLines; i++){
+    for(j=0; j<numberOfColumns; j++){
+        x[j] = malloc(numberOfPlanes * sizeof(int));
+    }
+  }
+
+  //Filling up the matrix with '0's, to fill the ellipsoid with '1's later on
+  for(i=0; i<numberOfLines; i++){
+      for(j=0; j<numberOfColumns; j++){
+        for(k=0; k<numberOfPlanes; k++){
+            x[i][j][k] = 0;
+        }
+      }
+   }
+   
+   //Creating the ellipsoid with '1's
+
+  //Getting which plane the user wants to see
+  printf("\nWhich plane of your matrix would you like to see? ");
+  scanf("%d", &planeOfChoice);
+  
+  //Printing the plane
+  printf("\n");
+  for(i=0; i<numberOfLines; i++){
+    for(j=0; j<numberOfColumns; j++){
+      if(planeOfChoice <= numberOfPlanes){
+        printf("%2d ", x[i][j][planeOfChoice]);
+    }else{
+        printf("This plane does not exist in this matrix!")
+    }
+    printf("\n");
+  }
+    
+  //Freeing the memory that was allocated
+  for(i=0; i<numberOfLines; i++){
+    for(j=0; j<numberOfColumns; j++){
+        free(x[i][j]);
+    }
+  }
+  for(i=0; i<numberOfLines; i++){
+    free(x[i]);
+  }
+  free(x);
+  
+  
+  return 0;
+}

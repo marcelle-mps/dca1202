@@ -42,6 +42,7 @@ int main(){
   }
 
   //Printing the matrix
+  printf("\n");
   for(i=0; i<numberOfLines; i++){
     for(j=0; j<numberOfColumns; j++){
       printf("%2d ", x[i][j]);
@@ -60,6 +61,7 @@ int main(){
   }
   
   //Printing the vector
+  printf("\n");
   for(i=0; i<numberOfElements; i++){
       printf("%d ", y[i]);
     }

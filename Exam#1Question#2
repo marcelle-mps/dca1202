@@ -80,16 +80,20 @@ int main(){
   return 0;
 }
 
-/*FINAL ANSWER:
-Reallocating the matrix's lines one by one, from top to bottom, to a different
-vector, they retain the qualities requested by the question, since the first elements
-(which would be the first lines of the matrix) of a vector are of utmost importance
-while the last elements (bottom line of the matrix) are of less importance.
-
 RESPOSTA FINAL:
 Realocando a matriz linha por linha, de cima para baixo, para um novo vetor,
 ele irá corresponder as qualidades esperadas pela questão, tendo em vista que
 os primeiros elementos (que seriam as primeiras linhas da matriz) de um vetor
 são os de mais importância, contém os bytes mais significativos, e os últimos
 elementos (linhas inferiores da matriz) guardam os bytes de menor significância.
-*/
+
+Portanto, precisei, após a construção da matriz com os elementos escolhidos, de
+dois laços de repetição que percorressem linhas e colunas na matriz com os índices
+'i' e 'j' sendo usados também como contadores, de um número para limitar a quantidade
+de linhas e colunas ('numberOfLines' e 'numberOfColumns')e de um terceiro contador,
+'k', que também fosse sendo incrementado de um em um para atuar como índice do meu vetor.
+Dentro desses laços apenas igualei o elemento correspondente da matriz para o vetor
+usando esses índices como posições deles e depois dentro de um outro laço, com um índice
+'i' que percorra o comprimento do vetor, delimitado pelo 'numberOfElements' que é a
+multiplicação das duas outras variáveis citadas previamente ('numberOfLines' e
+'numberOfColumns'), imprimi os valores do novo vetor através de um printf.*/

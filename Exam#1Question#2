@@ -4,7 +4,7 @@
 int main(){
   int **x;
   int numberOfLines, numberOfColumns, i, j;
-  int **y;
+  int *y;
   int numberOfElements, k=0;
   
   //Having the matrix's size pre-defined as 8
@@ -25,6 +25,9 @@ int main(){
   for(i=0; i<numberOfLines; i++){
     x[i] = malloc(numberOfColumns * sizeof(int));
   }
+  
+  //Allocating space for the vector
+  y = malloc(numberOfElements * sizeof(int*));
 
   //Filling up the matrix in a checkered pattern, so they look better in the vector
   for(i=0; i<numberOfLines; i++){
@@ -54,9 +57,6 @@ int main(){
     printf("\n");
   }
   
-  //Allocating space for the vector
-  y = malloc(numberOfElements * sizeof(int*));
-  
   for(i=0; i<numberOfLines; i++){
     for(j=0; j<numberOfColumns; j++){
       y[k] = x[i][j];
@@ -68,16 +68,28 @@ int main(){
   printf("\n");
   for(i=0; i<numberOfElements; i++){
       printf("%d ", y[i]);
-    }
+  }
     
   //Freeing the memory that was allocated
   for(i=0; i<numberOfLines; i++){
     free(x[i]);
   }
   free(x);
-  for(i=0; i<numberOfElements; i++){
-    free(y[i]);
-  }
+  free(y);
   
   return 0;
 }
+
+/*FINAL ANSWER:
+Reallocating the matrix's lines one by one, from top to bottom, to a different
+vector, they retain the qualities requested by the question, since the first elements
+(which would be the first lines of the matrix) of a vector are of utmost importance
+while the last elements (bottom line of the matrix) are of less importance.
+
+RESPOSTA FINAL:
+Realocando a matriz linha por linha, de cima para baixo, para um novo vetor,
+ele irá corresponder as qualidades esperadas pela questão, tendo em vista que
+os primeiros elementos (que seriam as primeiras linhas da matriz) de um vetor
+são os de mais importância, contém os bytes mais significativos, e os últimos
+elementos (linhas inferiores da matriz) guardam os bytes de menor significância.
+*/

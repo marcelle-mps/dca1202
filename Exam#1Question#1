@@ -35,9 +35,16 @@ int main(){
    }
  
    //Creating the ellipsoid with '1's
+   /*for(i=0; i<numberOfLines; i++){
+    for(j=0; j<numberOfColumns; j++){
+      for(k=0; k<numberOfPlanes; k++){
+          x[numberOfLines/(i+2)][numberOfColumns/(i+2)][k] = 1;
+      }
+    }
+  }*/
 
-  //Getting which plane the user wants to see
-  printf("\nWhich plane of your matrix would you like to see? ");
+  //Getting which plane the user wants to see on the z axis
+  printf("\nWhich plane of the z axis of your matrix would you like to see? ");
   scanf("%d", &planeOfChoice);
   
   //Printing the plane
@@ -68,3 +75,23 @@ int main(){
   
   return 0;
 }
+
+
+  /*LETRA A:
+  As posições da matriz poderão ser acessadas na variável x[i][j][k]
+  a partir desses índices (i, j, k) que podem ser selecionados com um
+  valor específico dentro do próprio programa ou um dado pelo usuário.
+  
+  LETRA B:
+  Não consegui encontrar uma solução para a construção da elipsóide
+  a tempo (antes do fim do horário da prova), achei algumas ideias em
+  phyton no StackOverflow porém nada em C ou C++. Por isso, fiz o resto
+  da questão mas deixei a letra B "em branco".
+  
+  LETRA C:
+  A saída do plano desejado será dada a partir de um scanf para saber
+  qual dos planos deseja exibir (planeOfChoice) e um printf dentro de
+  dois laços de repetição, para percorrer linhas e colunas, juntamente
+  com um if e um outro printf que testem se aquele plano é válido, ou
+  seja, se ele existe na matriz, e informem se o mesmo não for.*/
+  

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 int main(){
-  int **x;
+  int ***x;
   int numberOfLines, numberOfColumns, numberOfPlanes, i, j, k;
   int planeOfChoice;
   
@@ -21,19 +21,19 @@ int main(){
   }
   for(i=0; i<numberOfLines; i++){
     for(j=0; j<numberOfColumns; j++){
-        x[j] = malloc(numberOfPlanes * sizeof(int));
+        x[i][j] = malloc(numberOfPlanes * sizeof(int));
     }
   }
-
+ 
   //Filling up the matrix with '0's, to fill the ellipsoid with '1's later on
   for(i=0; i<numberOfLines; i++){
-      for(j=0; j<numberOfColumns; j++){
+    for(j=0; j<numberOfColumns; j++){
         for(k=0; k<numberOfPlanes; k++){
             x[i][j][k] = 0;
         }
       }
    }
-   
+ 
    //Creating the ellipsoid with '1's
 
   //Getting which plane the user wants to see
@@ -45,9 +45,12 @@ int main(){
   for(i=0; i<numberOfLines; i++){
     for(j=0; j<numberOfColumns; j++){
       if(planeOfChoice <= numberOfPlanes){
-        printf("%2d ", x[i][j][planeOfChoice]);
-    }else{
-        printf("This plane does not exist in this matrix!")
+        printf("%3d ", x[i][j][planeOfChoice]);
+      }else{
+          i = numberOfLines;
+          j = numberOfColumns;
+        printf("This plane does not exist in this matrix!");
+      }
     }
     printf("\n");
   }
@@ -62,7 +65,6 @@ int main(){
     free(x[i]);
   }
   free(x);
-  
   
   return 0;
 }

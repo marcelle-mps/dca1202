@@ -1,0 +1,30 @@
+
+int cmp (const void * a, const void * b){
+    return ( *(float*)a -  *(float*)b );
+}
+
+int main(){
+    
+    int i, size;
+    float *x;
+ 	 
+ 	printf("What's the size of your vector? ");
+    scanf("%d", &size);
+ 	 
+ 	 x = (float*) malloc(size * sizeof(float));
+ 	
+ 	printf("Input the numbers of your vector: ");
+ 	 for(i=0; i<size; i++){
+ 	     scanf("%f", &x[i]);
+ 	 }
+ 	 
+ 	 qsort(x, size, sizeof (float*), cmp);
+ 	 
+ 	 printf("%.4f", x[0]);
+ 	 for(i=1; i<size; i++){
+ 	     printf(", %.4f", x[i]);
+ 	 }
+ 	 
+ 	 free(x);
+ 	
+}

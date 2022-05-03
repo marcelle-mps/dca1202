@@ -1,0 +1,25 @@
+/*Um ponteiro é um tipo de variável que guarda um endereço na memória*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+  int x, *px;
+  
+  //Pointing *px to the integer 'x'
+  px = &x;
+  x = 10;
+  
+  //Printing the value of 'x'
+  printf("   x: %d\n", x);
+  
+  //Printing the value of 'x' using the pointer
+  printf(" *px: %d\n", *px);
+  
+  //Printing the adress of 'x' using the pointer
+  printf(" *px: %d\n", px);
+  
+  return 0;
+  
+}

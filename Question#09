@@ -6,19 +6,23 @@ int main(){
   //4093
   //4094
   //4095
+  //Anda de um em um
   
   int x[0]
   //4094
   //4096
   //4098
+  //Anda de dois em dois
   
   float x[0]
   //4096
   //409A
   //409E
+  //Anda quatro em quatro
   
   double x[0]
   //409A
   //40A2
   //40AA
+  //Anda de oito em oito
 }

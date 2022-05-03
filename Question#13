@@ -1,1 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
 
+void sortBySize (float *x, int size){
+    
+    int i, j;
+    float temporary;
+    
+    temporary = 0.0;
+    
+    for(i=0; i<size; i++){
+        for(j=i+1; j<size; j++){
+            if(x[i] > x[j]){
+                temporary = x[i];
+                x[i] = x[j];
+                x[j] = temporary;
+            }
+        }
+    }
+    
+}
+
+int main(){
+    
+    int i, size;
+    float *x;
+ 	 
+ 	printf("What's the size of your vector? ");
+    scanf("%d", &size);
+ 	 
+ 	 x = (float*) malloc(size * sizeof(float));
+ 	
+ 	printf("Input the numbers of your vector: ");
+ 	 for(i=0; i<size; i++){
+ 	     scanf("%f", &x[i]);
+ 	 }
+ 	 
+ 	 sortBySize(x, size);
+ 	 
+ 	 printf("%.4f", x[0]);
+ 	 for(i=1; i<size; i++){
+ 	     printf(", %.4f", x[i]);
+ 	 }
+ 	 
+ 	 free(x);
+ 	
+}

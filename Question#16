@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    
+    int i, j, size, *x, *y, *z;
+ 	 
+ 	printf("What's the size of your vector? ");
+    scanf("%d", &size);
+ 	 
+ 	 x = (int*) malloc(size * sizeof(int));
+ 	
+ 	printf("\nInput the numbers of your vector x: ");
+ 	 for(i=0; i<size; i++){
+ 	     scanf("%d", &x[i]);
+ 	 }
+ 	 
+ 	 y = (int*) malloc(size * sizeof(int));
+ 	
+ 	printf("\nInput the numbers of your vector y: ");
+ 	 for(i=0; i<size; i++){
+ 	     scanf("%d", &y[i]);
+ 	 }
+ 	 
+ 	 z = (int*) malloc(size * sizeof(int));
+ 	
+ 	 for(i=0; i<size; i++){
+ 	   z[i] = x[i] + y[i];
+ 	 }
+ 	 
+ 	 printf("\n vetor x, de tamanho: %d", size);
+ 	 for(i=0; i<size; i++){
+ 	   printf("\n%d", x[i]);
+ 	 }
+ 	 
+ 	 printf("\n vetor y, de tamanho: %d", size);
+ 	 for(i=0; i<size; i++){
+ 	   printf("\n%d", y[i]);
+ 	 }
+ 	 
+ 	 printf("\n vetor z, de tamanho: %d", size);
+ 	 for(i=0; i<size; i++){
+ 	   printf("\n%d", z[i]);
+ 	 }
+ 	 
+ 	 free(x);
+ 	 free(y);
+ 	 free(z);
+}
